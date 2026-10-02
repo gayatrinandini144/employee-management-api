@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": "Employee Management API",
+    "description": "CRUD endpoints for internSpark Java Developer internship task 1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "Create Employee",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/v1/employees",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Asha\",\n  \"lastName\": \"Rao\",\n  \"email\": \"asha.rao@example.com\",\n  \"department\": \"Engineering\",\n  \"salary\": 65000,\n  \"dateOfJoining\": \"2023-06-12\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Employees",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/v1/employees" }
+    },
+    {
+      "name": "Get Employee By Id",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/v1/employees/1" }
+    },
+    {
+      "name": "Update Employee",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/v1/employees/1",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Asha\",\n  \"lastName\": \"Rao-Kulkarni\",\n  \"email\": \"asha.rao@example.com\",\n  \"department\": \"Product\",\n  \"salary\": 70000,\n  \"dateOfJoining\": \"2023-06-12\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete Employee",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/api/v1/employees/1" }
+    }
+  ]
+}
